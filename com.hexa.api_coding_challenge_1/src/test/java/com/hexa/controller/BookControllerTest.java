@@ -26,15 +26,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class BookControllerTest {
 
     @Mock
-    private BookService bookService;
+     BookService bookService;
 
     @InjectMocks
-    private BookController bookController;
+     BookController bookController;
 
     @Autowired
-    private MockMvc mockMvc;  // Ensure this is Autowired
+     MockMvc mockMvc;  
 
-    private Book book;
+     Book book;
 
     @BeforeEach
     void setUp() {

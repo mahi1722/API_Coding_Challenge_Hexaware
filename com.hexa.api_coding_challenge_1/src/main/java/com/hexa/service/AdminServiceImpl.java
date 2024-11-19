@@ -2,7 +2,6 @@ package com.hexa.service;
 
 
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -32,16 +31,16 @@ import com.hexa.repository.AdminRepository;
 public class AdminServiceImpl implements AdminService {
 
 	@Autowired
-	private AdminRepository adminRepository;
+	 AdminRepository adminRepository;
 
 	@Autowired
-	private PasswordEncoder passwordEncoder;
+	 PasswordEncoder passwordEncoder;
 
 	@Autowired
-	private JwtProvider jwtProvider;
+	 JwtProvider jwtProvider;
 
 	@Autowired
-	private CustomUserServiceImpl customUserServiceImpl;
+	 CustomUserServiceImpl customUserServiceImpl;
 
 	@Override
 	public String createUser(SignUpDTO req) {
@@ -88,7 +87,7 @@ public class AdminServiceImpl implements AdminService {
 		return authResponse;
 	}
 
-	private Authentication authenticate(String email, String password) {
+	 Authentication authenticate(String email, String password) {
 		UserDetails userDetails = customUserServiceImpl.loadUserByUsername(email);
 		if (userDetails == null) {
 			throw new BadCredentialsException("User not found");

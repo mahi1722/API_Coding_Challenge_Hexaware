@@ -25,9 +25,9 @@ import com.hexa.repository.AdminRepository;
 public class CustomUserServiceImpl implements UserDetailsService {
 
 	@Autowired
-	private AdminRepository adminRepository;
+	 AdminRepository adminRepository;
 	
-	private static final String ADMIN_PREFIX = "admin_";
+	static final String ADMIN_PREFIX = "admin_";
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -51,7 +51,7 @@ public class CustomUserServiceImpl implements UserDetailsService {
 		throw new UsernameNotFoundException("User not found with username: " + username);
 	}
 
-	private UserDetails buildUserDetails(String email, String password, USER_ROLE role) {
+	 UserDetails buildUserDetails(String email, String password, USER_ROLE role) {
 		if (role == null) {
 			role = USER_ROLE.ROLE_ADMIN;
 		}
